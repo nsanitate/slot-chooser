@@ -1,0 +1,15 @@
+{
+  "name": "slot",
+  "description": "My astonishing app",
+  "main": "index.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "jQuery-SlotMachine": "jquery-slotmachine#^3.0.1"
+  }
+}

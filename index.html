@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Slot</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bower_components/jQuery-SlotMachine/dist/jquery.slotmachine.min.css">
+	<link rel="stylesheet" href="index.css">
+	<script>
+		if (typeof module === 'object') { window.module = module; module = undefined; }
+	</script>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/jQuery-SlotMachine/dist/jquery.slotmachine.js"></script>
+	<script>
+		if (window.module) module = window.module;
+	</script>
+</head>
+
+<body>
+
+	<div id="randomize">
+		<div class="content container" style="text-align: center;max-width: 900px;">
+			<h1>Peppe Slot</h1>
+
+			<div class="row">
+				<div class="col-xs-12">
+					<div>
+						<div id="machine1" class="randomizeMachine">
+							<div><img src="img/ramazzotti.jpg" /></div>
+							<div><img src="img/zero.jpg" /></div>
+							<div><img src="img/minghi-mietta.jpg" /></div>
+							<div><img src="img/d-alessio.jpg" /></div>
+							<div><img src="img/elisa-ligabue.jpg" /></div>
+							<div><img src="img/pravo.jpg" /></div>
+							<div><img src="img/emma.jpg" /></div>
+							<div><img src="img/moda-jarabedepalo.jpg" /></div>
+							<div><img src="img/arisa.jpg" /></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<div class="btn-group btn-group-justified btn-group-randomize" role="group">
+					<div id="ranomizeButton" type="button" class="btn btn-danger btn-lg">Play!</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function () {
+			var machine1 = $("#machine1").slotMachine({
+				active: 0,
+				delay: 500
+			});
+
+			function onComplete(active) {
+				$("#machine1Result").text("Index: " + this.active);
+			}
+
+			$("#ranomizeButton").click(function () {
+				machine1.shuffle(5, onComplete);
+			})
+		});
+	</script>
+
+</body>
+
+</html>
